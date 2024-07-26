@@ -19,3 +19,9 @@ test {
 kotlin {
     jvmToolchain(17)
 }
+
+tasks.register('runMultiplicationTable', JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = 'org.example.MainKt'
+    standardInput = System.in
+}
