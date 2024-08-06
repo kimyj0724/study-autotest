@@ -1,5 +1,9 @@
 package org.example
 
+fun main() {
+    println(Homework2().solution("-1 0 1 2"))
+}
+
 class Homework2 {
     fun solution(s: String): String {
         val strArr = s.split(" ")

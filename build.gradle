@@ -20,8 +20,13 @@ kotlin {
     jvmToolchain(17)
 }
 
-tasks.register('runMain', JavaExec) {
+tasks.register('runHomework1', JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
-    main = 'org.example.MainKt'
+    main = 'org.example.Homework1Kt'
     standardInput = System.in
+}
+
+tasks.register('runHomework2', JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = 'org.example.Homework2Kt'
 }
