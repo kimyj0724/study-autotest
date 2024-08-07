@@ -4,22 +4,17 @@ fun main() {
     println("1부터 9까지의 숫자를 입력하세요:")
     val n = readlnOrNull()
     val input = Integer.parseInt(n)
-
     println("$input 단 :")
-    for (i: Int in 1..9) {
-        println("\n $input * $i = ${input * i}")
-    }
+    println(Homework1().multiplicationTable(input))
 }
 
 class Homework1 {
-    fun calculate() {
-        println("1부터 9까지의 숫자를 입력하세요:")
-        val n = readlnOrNull()
-        val input = Integer.parseInt(n)
+    fun multiplicationTable(inputNum: Int): ArrayList<Int> {
+        val result = ArrayList<Int>()
 
-        println("$input 단 :")
         for (i: Int in 1..9) {
-            println("\n $input * $i = ${input * i}")
+            result.add(inputNum * i)
         }
+        return result
     }
 }
