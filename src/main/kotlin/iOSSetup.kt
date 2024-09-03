@@ -2,13 +2,15 @@ package org.example
 
 import io.appium.java_client.ios.IOSDriver
 import io.appium.java_client.remote.options.BaseOptions
+import org.openqa.selenium.support.ui.WebDriverWait
 import org.testng.annotations.AfterClass
 import org.testng.annotations.BeforeClass
-import org.testng.annotations.Test
 import java.net.URL
+import java.time.Duration
 
-class iOSSetup {
+open class iOSSetup {
     lateinit var driver : IOSDriver
+    lateinit var wait : WebDriverWait
 
     @BeforeClass
     fun setUp() {
@@ -19,7 +21,7 @@ class iOSSetup {
             .amend("appium:automationName", "XCuiTest")
             .amend("appium:udid", "712529F5-D307-4261-8809-6D95457F1FC0")
             .amend("appium:app", "/Users/kimyj/Downloads/TestApp.app")
-            .amend("appium:noReset", true)
+            //.amend("appium:noReset", true)
             .amend("appium:includeSafariInWebviews", true)
             .amend("appium:newCommandTimeout", 3600)
             .amend("appium:connectHardwareKeyboard", true);
@@ -29,12 +31,7 @@ class iOSSetup {
         }
 
         driver = IOSDriver(getUrl(), options)
-    }
-
-    @Test
-    fun sampleTest() {
-        println("TEST")
-
+        wait = WebDriverWait(driver, Duration.ofSeconds(10))
     }
 
     @AfterClass

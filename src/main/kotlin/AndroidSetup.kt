@@ -2,13 +2,16 @@ package org.example
 
 import io.appium.java_client.android.AndroidDriver
 import io.appium.java_client.remote.options.BaseOptions
+import org.openqa.selenium.support.ui.WebDriverWait
 import org.testng.annotations.AfterClass
 import org.testng.annotations.BeforeClass
-import org.testng.annotations.Test
 import java.net.URL
+import java.time.Duration
 
-class AndroidSetup {
+
+open class AndroidSetup {
     lateinit var driver : AndroidDriver
+    lateinit var wait : WebDriverWait
 
     @BeforeClass
     fun setUp() {
@@ -18,7 +21,7 @@ class AndroidSetup {
             .amend("appium:automationName", "UiAutomator2")
             .amend("appium:udid", "emulator-5554")
             .amend("appium:app", "/Users/kimyj/Downloads/ApiDemos-debug.apk")
-            .amend("appium:noReset", true)
+            //.amend("appium:noReset", true)
             .amend("appium:ensureWebviewsHavePages", true)
             .amend("appium:nativeWebScreenshot", true)
             .amend("appium:newCommandTimeout", 3600)
@@ -29,12 +32,7 @@ class AndroidSetup {
         }
 
         driver = AndroidDriver(getUrl(), options)
-    }
-
-    @Test
-    fun sampleTest() {
-        println("TEST")
-
+        wait = WebDriverWait(driver, Duration.ofSeconds(10))
     }
 
     @AfterClass
