@@ -1,4 +1,6 @@
-import org.example.Homework2
+package study01
+
+import org.example.study01.Homework2
 import org.testng.annotations.Test
 import kotlin.test.assertEquals
 

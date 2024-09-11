@@ -1,4 +1,6 @@
-import org.example.Homework1
+package study01
+
+import org.example.study01.Homework1
 import org.testng.annotations.Test
 import org.testng.Assert.assertEquals
 

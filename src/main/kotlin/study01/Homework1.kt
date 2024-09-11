@@ -1,4 +1,4 @@
-package org.example
+package org.example.study01
 
 fun main() {
     println("1부터 9까지의 숫자를 입력하세요:")

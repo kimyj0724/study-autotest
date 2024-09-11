@@ -1,4 +1,4 @@
-package org.example
+package org.example.setup
 
 import io.appium.java_client.ios.IOSDriver
 import io.appium.java_client.remote.options.BaseOptions
