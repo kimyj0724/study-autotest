@@ -17,6 +17,8 @@ class AndroidTitleTest : TestBase(DriverManager.Platform.ANDROID) {
     fun changeTitleTest() {
         androidPage.clickMenuButton("App")
         androidPage.clickMenuButton("Activity")
+        androidPage.swipeDown()
+        androidPage.swipeUp()
         androidPage.clickMenuButton("Custom Title")
 
         androidPage.inputKeywordToLeftInputBox("하하")
