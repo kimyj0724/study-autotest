@@ -1,4 +1,4 @@
-package org.example
+package org.example.study01
 
 fun main() {
     println(Homework2().solution("-1 0 1 2"))
