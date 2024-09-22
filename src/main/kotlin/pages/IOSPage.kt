@@ -1,30 +1,25 @@
 package org.example.pages
 
 import org.example.utilities.ElementUtil
-import io.appium.java_client.AppiumBy
-import org.openqa.selenium.support.ui.ExpectedConditions
 import kotlin.test.assertEquals
 
 class IOSPage : ElementUtil() {
-    init {
-        setWebDriverWait()
-    }
 
     fun inputKeywordToInputBoxA(keyword: String) {
-        wait.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.xpath("//XCUIElementTypeTextField[@name='IntegerA']"))).clear()
-        wait.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.xpath("//XCUIElementTypeTextField[@name='IntegerA']"))).sendKeys(keyword)
+        val inputBoxA = findElementByXpath("//XCUIElementTypeTextField[@name='IntegerA']")
+        sendKeysToInput(inputBoxA, keyword)
     }
 
     fun inputKeywordToInputBoxB(keyword: String) {
-        wait.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.xpath("//XCUIElementTypeTextField[@name='IntegerB']"))).clear()
-        wait.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.xpath("//XCUIElementTypeTextField[@name='IntegerB']"))).sendKeys(keyword)
+        val inputBoxB = findElementByXpath("//XCUIElementTypeTextField[@name='IntegerB']")
+        sendKeysToInput(inputBoxB, keyword)
     }
 
     fun clickComputeSumButton() {
-        tapElementByXpath("//XCUIElementTypeButton[@name='ComputeSumButton']")
+        findElementByXpath("//XCUIElementTypeButton[@name='ComputeSumButton']").click()
     }
 
     fun checkComputeResult(result: String) {
-        assertEquals(wait.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.xpath("//XCUIElementTypeStaticText[@name='Answer']"))).getAttribute("label"), result)
+        assertEquals(findElementByXpath("//XCUIElementTypeStaticText[@name='Answer']").getAttribute("label"), result)
     }
 }
