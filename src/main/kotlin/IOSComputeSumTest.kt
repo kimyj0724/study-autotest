@@ -1,13 +1,12 @@
 package org.example
 
 import io.appium.java_client.AppiumBy
-import org.example.setup.iOSSetup
-import org.example.utilities.ElementUtil
+import org.example.setup.DriverManager
 import org.testng.annotations.Test
 import org.openqa.selenium.support.ui.ExpectedConditions
 import kotlin.test.assertEquals
 
-class iOSComputeSumTest : iOSSetup(), ElementUtil {
+class IOSComputeSumTest : TestBase(DriverManager.Platform.iOS) {
 
     @Test
     fun computeSumTest() {

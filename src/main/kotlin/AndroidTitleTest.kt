@@ -1,13 +1,13 @@
 package org.example
 
 import io.appium.java_client.AppiumBy
-import org.example.setup.AndroidSetup
+import org.example.setup.DriverManager
 import org.example.utilities.ElementUtil
 import org.testng.annotations.Test
 import org.openqa.selenium.support.ui.ExpectedConditions
 import kotlin.test.assertEquals
 
-class AndroidTitleTest : AndroidSetup(), ElementUtil {
+class AndroidTitleTest : TestBase(DriverManager.Platform.ANDROID) {
     @Test
     fun changeTitleTest() {
         tapElementByXpath(wait, "//android.widget.TextView[@content-desc='App']")
