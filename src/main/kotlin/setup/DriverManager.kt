@@ -51,7 +51,7 @@ object DriverManager {
             //.amend("appium:noReset", true)
             .amend("appium:includeSafariInWebviews", true)
             .amend("appium:newCommandTimeout", 3600)
-            .amend("appium:connectHardwareKeyboard", true);
+            .amend("appium:connectHardwareKeyboard", true)
 
         driver = IOSDriver(getUrl(), options)
     }

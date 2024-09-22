@@ -18,8 +18,4 @@ open class ElementUtil {
         element.clear()
         element.sendKeys(keyword)
     }
-
-    fun tapElement(element: WebElement) {
-        element.click()
-    }
 }
