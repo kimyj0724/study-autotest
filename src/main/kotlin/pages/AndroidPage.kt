@@ -1,7 +1,8 @@
 package org.example.pages
 
 import org.example.utilities.ElementUtil
-import kotlin.test.assertEquals
+import org.hamcrest.MatcherAssert.assertThat
+import org.hamcrest.Matchers.equalTo
 
 class AndroidPage : ElementUtil() {
 
@@ -19,7 +20,7 @@ class AndroidPage : ElementUtil() {
     }
 
     fun checkLeftTitle(result: String) {
-        assertEquals(findElementByXpath("//android.widget.TextView[@content-desc='Left is best']").text, result)
+        assertThat("Left Title이 다릅니다.", findElementByXpath("//android.widget.TextView[@content-desc='Left is best']").text, equalTo(result))
     }
 
     fun inputKeywordToRightInputBox(keyword: String) {
@@ -32,6 +33,6 @@ class AndroidPage : ElementUtil() {
     }
 
     fun checkRightTitle(result: String) {
-        assertEquals(findElementByXpath("//android.widget.TextView[@content-desc='Right is always right']").text, result)
+        assertThat("Right Title이 다릅니다.", findElementByXpath("//android.widget.TextView[@content-desc='Right is always right']").text, equalTo(result))
     }
 }

@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait
 import java.time.Duration
 
 open class ElementUtil {
-    private val wait : WebDriverWait = WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(10))
+    private val wait = WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(10))
 
     fun findElementByXpath(xpath: String): WebElement {
         return wait.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.xpath(xpath)))

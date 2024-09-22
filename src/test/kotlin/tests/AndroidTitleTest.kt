@@ -2,14 +2,19 @@ package tests
 
 import org.example.pages.AndroidPage
 import org.example.setup.DriverManager
+import org.testng.annotations.BeforeMethod
 import org.testng.annotations.Test
 
 class AndroidTitleTest : TestBase(DriverManager.Platform.ANDROID) {
+    private lateinit var androidPage: AndroidPage
+
+    @BeforeMethod
+    fun setPage() {
+        androidPage = AndroidPage()
+    }
 
     @Test
     fun changeTitleTest() {
-        val androidPage = AndroidPage()
-
         androidPage.clickMenuButton("App")
         androidPage.clickMenuButton("Activity")
         androidPage.clickMenuButton("Custom Title")

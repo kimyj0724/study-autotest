@@ -1,7 +1,8 @@
 package org.example.pages
 
 import org.example.utilities.ElementUtil
-import kotlin.test.assertEquals
+import org.hamcrest.MatcherAssert.assertThat
+import org.hamcrest.Matchers.equalTo
 
 class IOSPage : ElementUtil() {
 
@@ -20,6 +21,6 @@ class IOSPage : ElementUtil() {
     }
 
     fun checkComputeResult(result: String) {
-        assertEquals(findElementByXpath("//XCUIElementTypeStaticText[@name='Answer']").getAttribute("label"), result)
+        assertThat("계산 결과가 다릅니다.", findElementByXpath("//XCUIElementTypeStaticText[@name='Answer']").getAttribute("label"), equalTo(result))
     }
 }
