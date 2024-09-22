@@ -13,8 +13,7 @@ open class ElementUtil {
         wait = WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(10))
     }
 
-    fun tapElementByXpath(wait: WebDriverWait, xpath: String) {
+    fun tapElementByXpath(xpath: String) {
         wait.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.xpath(xpath))).click()
     }
-
 }
