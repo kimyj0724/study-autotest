@@ -1,4 +1,4 @@
-package org.example
+package tests
 
 import org.example.setup.DriverManager
 import org.example.utilities.ElementUtil

@@ -1,8 +1,7 @@
-package org.example
+package tests
 
 import io.appium.java_client.AppiumBy
 import org.example.setup.DriverManager
-import org.example.utilities.ElementUtil
 import org.testng.annotations.Test
 import org.openqa.selenium.support.ui.ExpectedConditions
 import kotlin.test.assertEquals

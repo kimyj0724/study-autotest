@@ -1,4 +1,4 @@
-package org.example
+package tests
 
 import io.appium.java_client.AppiumBy
 import org.example.setup.DriverManager
